@@ -1,0 +1,35 @@
+.general {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #2C77F4;
+}
+
+.menu mat-nav-list {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+.menu a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  white-space: nowrap;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu a:hover {
+  background-color: #1E5BB5;
+}
+
+body{
+  background-color: #e0e0e0;
+}

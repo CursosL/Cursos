@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="general">
+
+    <div *ngIf="apiService.isAuthenticated()" class="menu">
+      <a mat-list-item routerLink="/cuestionarios" routerLinkActive="active">Cuestionarios</a>
+      <a mat-list-item routerLink="/resultados" routerLinkActive="active">Resultados</a>
+      <a mat-list-item routerLink="/informacion" routerLinkActive="active">Información</a>
+      <a mat-list-item routerLinkActive="active" (click)="logout()">Cerar Sesion</a>
+    </div>
+
+  
+    <div class="contenido">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  
+</body>
+</html>
+
+

@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left, .right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left {
+  background-color: #f5f5f5;
+}
+
+.right {
+  background-color: #4285f4;
+  color: white;
+  text-align: center;
+  flex-direction: column;
+}
+
+.left img {
+  max-width: 60%;
+  height: auto;
+  margin: 50px 0;
+}
+
+.right img {
+  max-width: 60%;
+  height: auto;
+  margin: 50px 0;
+  position: relative; /* Make the element positionable */
+  top: -160px; /* Move it 50px up */
+}
+
+
+h1 {
+  font-size: 90px;
+  margin-bottom: 20px;
+  position: relative; /* Make the element positionable */
+  top: -150px; /* Move it 50px up */
+  left: -150px; /* Move it 50px to the left */
+}
+
+.buttons a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: white;
+  color: #4285f4;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  width: 60%;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+  position: relative; /* Make the element positionable */
+  top: -160px; /* Move it 50px up */
+}
+
+
+.buttons a {
+  flex: 1; /* This will make the buttons stretch to fill the container */
+  padding: 10px 200px;
+  /* ... other styles ... */
+}
+
+
+
+.buttons a:hover {
+  background-color: #357ae8;
+  color: white;
+}
+
+
+/* Aseguramos que el texto explicativo se vea bien */
+.left p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #000000;
+  padding: 20px;
+}
+
+.left, .right {
+  width: 100%;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 50px;
+  margin-bottom: 5px;
+  position: relative; 
+  top: -10px; 
+  left: -170px; 
+}

@@ -1,0 +1,111 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.container {
+  background-color: #ffffff;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  padding: 30px; /* Aumenta el espacio interno */
+  width: 90%; /* Ajuste de ancho para abarcar más espacio */
+  max-width: 1200px; /* Limita el ancho máximo en pantallas grandes */
+  text-align: center;
+  margin: 0 auto; /* Centra el contenedor */
+  margin-top: 30px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.groups {
+  background-color: #ffffff;
+  margin-bottom: 30px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+}
+
+.group-colors {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.group {
+  padding: 10px 15px;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.social {
+  background-color: #2b6cff;
+}
+
+.investigador {
+  background-color: #33cc33;
+}
+
+.realista {
+  background-color: #ffcc33;
+}
+
+.artista {
+  background-color: #00eaff;
+}
+
+.convencional {
+  background-color: #d42eff;
+}
+
+.emprendedor {
+  background-color: #ff4c4c;
+}
+
+.results {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.totals, .group-details {
+  flex: 1 1 45%;
+  margin: 10px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 2px solid #007bff;
+  border-radius: 8px;
+}
+
+.chart img {
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto;
+}
+
+.group-details p {
+  line-height: 1.5;
+}
+
+h2 {
+margin: 10px;
+
+}
+
+ngx-charts-bar-vertical {
+  display: block;
+  margin: auto;
+}
+
+

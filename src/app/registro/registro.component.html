@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+</head>
+<body>
+    <div class="register-container">
+        <div class="avatar">
+            <img src="/usuario2.png" alt="Imagen Derecha">
+        </div>
+        <h2>Registro de Usuario</h2>
+    
+        <form class="formm" #form="ngForm" (ngSubmit)="register(form)">
+          <div class="input-container">
+            <input id="nombre" name="nombre" type="text" placeholder="Usuario" required [(ngModel)]="creds.nombre">
+            <div *ngIf="form.submitted && !creds.nombre" class="error-message">
+              El nombre de usuario es obligatorio.
+            </div>
+          </div>
+          <div class="input-container">
+            <input 
+              id="email" 
+              name="email" 
+              type="email" 
+              placeholder="Correo electrónico" 
+              required 
+              [(ngModel)]="creds.email">
+            <div *ngIf="form.submitted && !creds.email" class="error-message">
+              El correo electrónico es obligatorio.
+            </div>
+            <div *ngIf="form.submitted && !emailValido(creds.email)" class="error-message">
+              El formato del correo electrónico no es válido.
+            </div>
+            <div *ngIf="emailExiste" class="error-message">
+              Este correo electrónico ya está registrado.
+            </div>
+          </div>
+          
+          <div class="input-container">
+            <input id="password" name="password" type="password" placeholder="Contraseña" required [(ngModel)]="creds.password">
+            <div *ngIf="form.submitted && !creds.password" class="error-message">
+              La contraseña es obligatoria.
+            </div>
+          </div>
+          
+          <div class="input-container">
+            <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Confirmar contraseña" required [(ngModel)]="confirmPassword">
+            <div *ngIf="form.submitted && !confirmPassword" class="error-message">
+              Debes confirmar la contraseña.
+            </div>
+            <div *ngIf="passwordError" class="error-message">
+              {{ passwordError }}
+            </div>
+          </div>
+
+          <button class="register-button" type="submit">Registrarse</button>
+          <a class="register-button" href="/principal">Volver</a>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+/* styles.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e0e0e0;
+}
+
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    display: grid;
+    gap: 20px;
+}
+
+.card {
+    
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
+.social {
+    margin-top: 20px;
+    border-left: 5px solid #1e90ff;
+    background-color: #e6f4ff;
+}
+
+.investigador {
+    border-left: 5px solid #00c853;
+    background-color: #e8f5e9;
+}
+
+.realista {
+    border-left: 5px solid #ff8f00;
+    background-color: #fff3e0;
+}
+
+.artista {
+    border-left: 5px solid #00acc1;
+    background-color: #e0f7fa;
+}
+
+.convencional {
+    border-left: 5px solid #AE01FF;
+    background-color: #f2ddfc;
+}
+
+.emprendedor {
+    border-left: 5px solid #FF0101;
+    background-color: #facccc;
+}

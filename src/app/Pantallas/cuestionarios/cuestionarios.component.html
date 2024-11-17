@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionarios</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Cuestionarios</h2>
+      
+        <div 
+          *ngFor="let grupoId of [1, 2, 3, 4, 5, 6]" 
+          class="card" 
+          [ngClass]="{'completado': esCompletado(grupoId), 'sin-contestar': !esCompletado(grupoId)}"
+        >
+          <h3>{{ gruposMap[grupoId] }}</h3>
+          <div class="status">
+            <span 
+              class="dot" 
+              [ngClass]="{'gray': !esCompletado(grupoId), 'green': esCompletado(grupoId)}"
+            ></span>
+            <span *ngIf="!esCompletado(grupoId)">Sin contestar</span>
+            <span *ngIf="esCompletado(grupoId)">Completado</span>
+          </div>
+          <button (click)="onContestar(grupoId)">Contestar</button>
+        </div>
+      </div>
+</body>
+</html>
+

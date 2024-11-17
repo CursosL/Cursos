@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+
+</head>
+<body>
+    <div class="login-container">
+        <div class="avatar">
+          <img src="/usuario2.png" alt="Imagen Derecha">
+        </div>
+        <h2>Inicio de Sesion</h2>
+      
+        <form class="formm" #form="ngForm" (ngSubmit)="login(form)">
+          <div class="input-container">
+            <input id="email" name="email" type="email" placeholder="Correo" required [(ngModel)]="creds.email">
+            <div *ngIf="showError && !creds.email" class="error-message">Por favor ingresa tu correo</div>
+          </div>
+      
+          <div class="input-container">
+            <input id="password" name="password" type="password" placeholder="Contraseña" required [(ngModel)]="creds.password">
+            <div *ngIf="showError && !creds.password" class="error-message">Por favor ingresa tu contraseña</div>
+          </div>
+      
+          <div *ngIf="loginError" class="error-message">{{ loginError }}</div>
+      
+          <button class="login-button" type="submit">Iniciar Sesion</button>
+          <a class="login-button" href="/principal">Volver</a>
+        </form>
+      
+        <p class="register-link">¿Aún no tienes una cuenta? <a href="/registro">Registrarse!</a></p>
+      </div>
+    
+
+</body>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados</title>
+
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Resultados</h1>
+    <div class="groups">
+      <h2>Grupos</h2>
+      <div class="group-colors">
+        <span class="group social">Social</span>
+        <span class="group investigador">Investigador</span>
+        <span class="group realista">Realista</span>
+        <span class="group artista">Artista</span>
+        <span class="group convencional">Convencional</span>
+        <span class="group emprendedor">Emprendedor</span>
+      </div>
+    </div>
+    <div class="results">
+      <div class="totals">
+        <h2>Totales Generales</h2>
+        <ngx-charts-bar-vertical
+          [view]="view"
+          [scheme]="'cool'"
+          [results]="totales"
+          [gradient]="true"
+          [xAxis]="true"
+          [yAxis]="true"
+          [legend]="true"
+          [showDataLabel]="true"
+          [customColors]="customColors">
+        </ngx-charts-bar-vertical>
+      </div>
+    
+      <!-- Mostrar solo el grupo con el mayor total -->
+      <div *ngIf="grupoMayor === 'Social'" class="group-details">
+        <h2>Social</h2>
+        <p>Las personas que disfrutan ayudar a los demás, son cooperadores, sensibles y tienen excelentes destrezas interpersonales están ubicadas en este tipo. Esto incluye a médicos, docentes, psicólogos, trabajadores sociales, entre otros.</p>
+      </div>
+      <div *ngIf="grupoMayor === 'Investigador'" class="group-details">
+        <h2>Investigador</h2>
+        <p>Aquí se agrupan las personas que tienen habilidades analíticas, manejan ideas abstractas, y tienen valores no convencionales. Su mayor interés es la lógica y lo científico...</p>
+      </div>
+      <div *ngIf="grupoMayor === 'Realista'" class="group-details">
+        <h2>Realista</h2>
+        <p>En este tipo se integran a las personas a las que les gusta trabajar con sus propias manos...</p>
+      </div>
+      <div *ngIf="grupoMayor === 'Artista'" class="group-details">
+        <h2>Artista</h2>
+        <p>En este tipo de personalidad se incluyen las personas que poseen habilidades artísticas...</p>
+      </div>
+      <div *ngIf="grupoMayor === 'Convencional'" class="group-details">
+        <h2>Convencional</h2>
+        <p>Son personas organizadas, detallistas, metódicas y se caracterizan por sus habilidades organizativas...</p>
+      </div>
+      <div *ngIf="grupoMayor === 'Emprendedor'" class="group-details">
+        <h2>Emprendedor</h2>
+        <p>En este tipo de personalidad se ubican las personas que le gustan los riesgos...</p>
+      </div>
+    </div>
+  </div>
+    
+</body>
+</html>
+
+
+
+
+

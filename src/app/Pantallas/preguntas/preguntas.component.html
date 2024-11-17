@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intereses y Actividades</title>
+</head>
+<body>
+  <div class="container">
+    <h2>{{ nombreInteres }}</h2>
+    <p>
+      Contesta las siguientes preguntas de la manera más adaptada a ti, para ayudarnos a identificar tus habilidades y preferencias en diferentes áreas.
+    </p>
+    <form (ngSubmit)="guardarRespuestas()">
+      <div *ngFor="let pregunta of preguntas" class="activity">
+        <label>{{ pregunta.pregunta }}</label>
+        <div>
+          <input type="radio" id="nunca-{{pregunta.id}}" [name]="'respuesta-' + pregunta.id" [value]="1" (change)="guardarRespuesta(pregunta.id, 1)">
+          <label for="nunca-{{pregunta.id}}">Nunca</label>
+        
+          <input type="radio" id="rara-{{pregunta.id}}" [name]="'respuesta-' + pregunta.id" [value]="2" (change)="guardarRespuesta(pregunta.id, 2)">
+          <label for="rara-{{pregunta.id}}">Rara vez</label>
+        
+          <input type="radio" id="aveces-{{pregunta.id}}" [name]="'respuesta-' + pregunta.id" [value]="3" (change)="guardarRespuesta(pregunta.id, 3)">
+          <label for="aveces-{{pregunta.id}}">A veces</label>
+        
+          <input type="radio" id="frecuente-{{pregunta.id}}" [name]="'respuesta-' + pregunta.id" [value]="4" (change)="guardarRespuesta(pregunta.id, 4)">
+          <label for="frecuente-{{pregunta.id}}">Frecuentemente</label>
+        
+          <input type="radio" id="siempre-{{pregunta.id}}" [name]="'respuesta-' + pregunta.id" [value]="5" (change)="guardarRespuesta(pregunta.id, 5)">
+          <label for="siempre-{{pregunta.id}}">Siempre</label>
+        </div>
+        
+      </div>
+      <button type="button" (click)="guardarRespuestas()">Finalizar</button>
+    </form>
+  
+    <!-- Muestra el mensaje de error si existe -->
+    <div *ngIf="errorMensaje" class="error-message">{{ errorMensaje }}</div>
+  </div>
+      
+</body>
+</html>
+
+
+  

@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0e0e0;
+}
+
+.register-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.avatar img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 30px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    background-color: #f5f5f5;
+}
+
+.input-container .show-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #aaa;
+}
+
+.register-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.register-button:hover {
+    background-color: #0056b3;
+}
+
+.buttons a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 60%;
+    text-align: center;
+
+  }
+  
+
+  .buttons a:hover {
+    background-color: #0058b6;
+    color: white;
+    
+  }
+
+  .register-button {
+    display: inline-block; /* Asegura que el enlace ocupe el mismo espacio que un botón */
+    text-align: center;    /* Centra el texto dentro del enlace */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+}
+
+.register-button:hover {
+    background-color: #0056b3;
+    text-decoration: none; /* Asegura que no aparezca subrayado al hacer hover */
+}
+
+
+/* Estilo básico para los mensajes de error */
+.error-message {
+    color: #e74c3c; /* Rojo intenso */
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5px;
+    background-color: #fdecea; /* Fondo rojo claro */
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #e74c3c;
+    animation: fadeIn 0.3s ease-in-out; /* Añade una animación */
+  }
+  
+  /* Animación para hacer aparecer los mensajes de error suavemente */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Estilo del contenedor para centrar los inputs y mensajes */
+  .input-container {
+    position: relative;
+    margin-bottom: 20px;
+  }
