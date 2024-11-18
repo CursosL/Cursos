@@ -17,8 +17,10 @@ html, body {
 .left, .right {
   width: 50%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
 .left {
@@ -29,84 +31,112 @@ html, body {
   background-color: #4285f4;
   color: white;
   text-align: center;
-  flex-direction: column;
 }
 
-.left img {
+.left img, .right img {
   max-width: 60%;
   height: auto;
-  margin: 50px 0;
+  margin-bottom: 20px;
 }
-
-.right img {
-  max-width: 60%;
-  height: auto;
-  margin: 50px 0;
-  position: relative; /* Make the element positionable */
-  top: -160px; /* Move it 50px up */
-}
-
 
 h1 {
-  font-size: 90px;
+  font-size: 3rem;
   margin-bottom: 20px;
-  position: relative; /* Make the element positionable */
-  top: -150px; /* Move it 50px up */
-  left: -150px; /* Move it 50px to the left */
 }
 
 .buttons a {
   display: inline-block;
   padding: 10px 20px;
-  margin: 10px 0;
+  margin: 10px 5px;
   background-color: white;
   color: #4285f4;
   text-decoration: none;
   font-weight: bold;
   border-radius: 10px;
-  width: 60%;
   text-align: center;
   transition: background-color 0.3s, color 0.3s;
-  position: relative; /* Make the element positionable */
-  top: -160px; /* Move it 50px up */
+  width: 200px;
 }
-
-
-.buttons a {
-  flex: 1; /* This will make the buttons stretch to fill the container */
-  padding: 10px 200px;
-  /* ... other styles ... */
-}
-
-
 
 .buttons a:hover {
   background-color: #357ae8;
   color: white;
 }
 
-
-/* Aseguramos que el texto explicativo se vea bien */
 .left p {
-  font-size: 20px;
+  font-size: 1.1rem;
   line-height: 1.6;
+  text-align: justify;
   color: #000000;
-  padding: 20px;
-}
-
-.left, .right {
-  width: 100%;
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 h2 {
-  font-size: 50px;
-  margin-bottom: 5px;
-  position: relative; 
-  top: -10px; 
-  left: -170px; 
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
+
+/* Media Queries para Responsividad */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .buttons a {
+    width: 180px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Las secciones se apilan */
+  }
+
+  .left, .right {
+    width: 100%; /* Ocupan todo el ancho */
+    height: auto;
+    padding: 10px;
+  }
+
+  .left img, .right img {
+    max-width: 80%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .buttons a {
+    width: 160px;
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+
+  .left p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .buttons a {
+    width: 140px;
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  .left p {
+    font-size: 0.9rem;
+  }}
