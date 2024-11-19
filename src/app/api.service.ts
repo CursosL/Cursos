@@ -18,7 +18,7 @@ export class ApiService {
     });
     const params = new HttpParams().set('grupoId', grupoId.toString());
   
-    return this.http.get<PreguntaDTO[]>('http://localhost:8080/api/preguntas/grupo', { headers, params }).pipe(
+    return this.http.get<PreguntaDTO[]>('https://beneficial-reprieve-production.up.railway.app/api/preguntas/grupo', { headers, params }).pipe(
       catchError(this.handleError)
     );
   }
@@ -29,11 +29,11 @@ export class ApiService {
       'Authorization': `Bearer ${token}`
     });
 
-    return this.http.get<resultadosConsulta>('http://localhost:8080/api/grupos', { headers });
+    return this.http.get<resultadosConsulta>('https://beneficial-reprieve-production.up.railway.app/api/grupos', { headers });
   }
 
   login(creds:credensiales){
-    return this.http.post('http://localhost:8080/login',creds,{
+    return this.http.post('https://beneficial-reprieve-production.up.railway.app/login',creds,{
       observe:'response'
     }).pipe(map((response: HttpResponse<any>)=>{
       const body = response.body;
@@ -58,7 +58,7 @@ export class ApiService {
 
 
   Registro(creds: registroUsuario) {
-    return this.http.post('http://localhost:8080/api/usuarios', creds, {
+    return this.http.post('https://beneficial-reprieve-production.up.railway.app/api/usuarios', creds, {
       observe: 'response'  // Observa solo la respuesta completa, sin procesar el cuerpo
     }).pipe(map((response: HttpResponse<any>) => {
       if (response.status === 201) {
@@ -69,11 +69,11 @@ export class ApiService {
   }
 
   verificarEmail(email: string): Observable<boolean> {
-    return this.http.get<boolean>(`http://localhost:8080/api/usuarios/buscar?email=${email}`);
+    return this.http.get<boolean>(`https://beneficial-reprieve-production.up.railway.app/api/usuarios/buscar?email=${email}`);
   }
 
 
-  private apiUrl = 'http://localhost:8080/api/usuarios/buscard';
+  private apiUrl = 'https://beneficial-reprieve-production.up.railway.app/api/usuarios/buscard';
   
   getUsuarioByEmail(email: string): Observable<registroUsuario> {
     const params = new HttpParams().set('email', email.trim());
@@ -100,7 +100,7 @@ export class ApiService {
         'Content-Type': 'application/json'
     });
   
-    return this.http.post('http://localhost:8080/api/respuestas/guardar', respuestas, { headers }).pipe(
+    return this.http.post('https://beneficial-reprieve-production.up.railway.app/api/respuestas/guardar', respuestas, { headers }).pipe(
         map(response => {
             console.log("Respuestas guardadas con éxito", response);
             return response;
@@ -117,7 +117,7 @@ export class ApiService {
     });
   
     // Aquí hacemos el POST a la API
-    return this.http.post<TotalGrupo>('http://localhost:8080/api/totales', totalGrupo, { headers }).pipe(
+    return this.http.post<TotalGrupo>('https://beneficial-reprieve-production.up.railway.app/api/totales', totalGrupo, { headers }).pipe(
       map(response => {
         console.log("TotalGrupo guardado con éxito", response);
         return response;
@@ -136,7 +136,7 @@ export class ApiService {
   
     const params = new HttpParams().set('usuarioId', usuarioId.toString());
   
-    return this.http.get<TotalGrupo[]>('http://localhost:8080/api/totales/usuario', { headers, params }).pipe(
+    return this.http.get<TotalGrupo[]>('https://beneficial-reprieve-production.up.railway.app/api/totales/usuario', { headers, params }).pipe(
       catchError(() => {
         console.error("Error al obtener los datos. Retornando un arreglo vacío.");
         return of([]); // Retorna un arreglo vacío en caso de error
