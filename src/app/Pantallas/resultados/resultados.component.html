@@ -24,16 +24,18 @@
       <div class="totals">
         <h2>Totales Generales</h2>
         <ngx-charts-bar-vertical
-          [view]="view"
-          [scheme]="'cool'"
-          [results]="totales"
-          [gradient]="true"
-          [xAxis]="true"
-          [yAxis]="true"
-          [legend]="true"
-          [showDataLabel]="true"
-          [customColors]="customColors">
-        </ngx-charts-bar-vertical>
+        [view]="view"
+        [scheme]="'cool'"
+        [results]="totales"
+        [gradient]="true"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="true"
+        [legendTitle]="'Grupos'" 
+        [showDataLabel]="true"
+        [customColors]="customColors">
+      </ngx-charts-bar-vertical>
+      
       </div>
     
       <!-- Mostrar solo el grupo con el mayor total -->
@@ -43,23 +45,23 @@
       </div>
       <div *ngIf="grupoMayor === 'Investigador'" class="group-details">
         <h2>Investigador</h2>
-        <p>Aquí se agrupan las personas que tienen habilidades analíticas, manejan ideas abstractas, y tienen valores no convencionales. Su mayor interés es la lógica y lo científico...</p>
+        <p>Aquí se agrupan las personas que tienen habilidades analíticas, manejan ideas abstractas, y tienen valores no convencionales. Su mayor interés es la lógica y lo científico. Analizan, evalúan y atienden problemas, y les gusta mucho aprender y entender los distintos eventos, junto a sus causas. En las ocupaciones de este tipo se encuentran los médicos, psicólogos, científicos y matemáticos, entre otros.</p>
       </div>
       <div *ngIf="grupoMayor === 'Realista'" class="group-details">
         <h2>Realista</h2>
-        <p>En este tipo se integran a las personas a las que les gusta trabajar con sus propias manos...</p>
+        <p>En este tipo se integran a las personas a las que les gusta trabajar con sus propias manos, manipular objetos, tienen habilidades mecánicas y generalmente no prefieren la interacción con los demás. También valoran el dinero, el estatus y el poder. Algunas ocupaciones de este tipo de personalidad son los ingenieros, arquitectos, agricultores, veterinarios, gastrónomos, médicos, entre otros.</p>
       </div>
       <div *ngIf="grupoMayor === 'Artista'" class="group-details">
         <h2>Artista</h2>
-        <p>En este tipo de personalidad se incluyen las personas que poseen habilidades artísticas...</p>
+        <p>En este tipo de personalidad se incluyen las personas que poseen habilidades artísticas, son independientes, originales y poco estructurados. Usan el arte como manera de expresión, son creativos y les gusta la independencia. Generalmente, tienen excelentes destrezas de redacción. Los músicos, actores, periodistas, escritores, diseñadores gráficos y de interiores están ubicados en este tipo de personalidad y ambiente ocupacional.</p>
       </div>
       <div *ngIf="grupoMayor === 'Convencional'" class="group-details">
         <h2>Convencional</h2>
-        <p>Son personas organizadas, detallistas, metódicas y se caracterizan por sus habilidades organizativas...</p>
+        <p>Son personas organizadas, detallistas, metódicas y se caracterizan por sus habilidades organizativas. Son buenos en matemáticas, disfrutan el orden y trabajar sin tener mucha interacción con los demás. Aquí se encuentran secretarias(os), contables, oficinistas, administradores, licenciados en logística y gestión entre otros.</p>
       </div>
       <div *ngIf="grupoMayor === 'Emprendedor'" class="group-details">
         <h2>Emprendedor</h2>
-        <p>En este tipo de personalidad se ubican las personas que le gustan los riesgos...</p>
+        <p>En este tipo de personalidad se ubican las personas que le gustan los riesgos, son agresivos al momento de alcanzar las metas que se establecen. Valoran el poder y tienen habilidades para convencer a los demás ante su punto de vista. Son extrovertidos, tienen liderazgo y buenas relaciones interpersonales. Los banqueros, vendedores, ingenieros, abogados, administradores, licenciados en ciencias políticas son algunas de las profesiones que se incluyen en este grupo.</p>
       </div>
     </div>
   </div>
