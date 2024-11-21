@@ -14,7 +14,7 @@
     
         <form class="formm" #form="ngForm" (ngSubmit)="register(form)">
           <div class="input-container">
-            <input id="nombre" name="nombre" type="text" placeholder="Usuario" required [(ngModel)]="creds.nombre">
+            <input id="nombre" name="nombre" type="text" placeholder="Nombre completo" required [(ngModel)]="creds.nombre">
             <div *ngIf="form.submitted && !creds.nombre" class="error-message">
               El nombre de usuario es obligatorio.
             </div>
